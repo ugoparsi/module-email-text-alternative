@@ -68,6 +68,7 @@ beforeEach(function (): void {
 afterEach(function (): void {
     Mage::setIsDeveloperMode($this->developerMode);
     $this->connection->rollBack();
+    Mage::getConfig()->cleanCache();
     QueueManager::reset();
 });
 
@@ -100,12 +101,12 @@ it('honors the dispatch store view when the worker uses a different view', funct
     $other = Mage::getModel('core/store');
     $other->setWebsiteId($primary->getWebsiteId())->setGroupId($primary->getGroupId())
         ->setCode('text_fixture')->setName('Example second view')->setIsActive(true)->save();
+    $config = Mage::getConfig();
+    $config->saveConfig(TEXT_ALTERNATIVE_CONFIG, $enabled ? '1' : '0', 'stores', (int) $primary->getId());
+    $config->saveConfig(TEXT_ALTERNATIVE_CONFIG, $enabled ? '0' : '1', 'stores', (int) $other->getId());
+    $config->reinit();
     Mage::app()->reinitStores();
-    $primary = Mage::app()->getStore($primary->getId());
-    $other = Mage::app()->getStore($other->getId());
-    $primary->setConfig(TEXT_ALTERNATIVE_CONFIG, $enabled ? '1' : '0');
-    $other->setConfig(TEXT_ALTERNATIVE_CONFIG, $enabled ? '0' : '1');
-    Mage::app()->setCurrentStore($other);
+    Mage::app()->setCurrentStore((int) $other->getId());
     Mage::setIsDeveloperMode(false);
 
     $template = textAlternativeTemplate((int) $primary->getId(), '<p>Example order summary</p>');
