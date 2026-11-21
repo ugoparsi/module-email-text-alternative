@@ -2,14 +2,14 @@
 
 Add a plain-text version of a rendered HTML email to the same message. Customers can read it in mail clients configured to show plain text.
 
-## Install
+## Install the preview
 
 The module requires PHP 8.5.1 or later and Maho 26.11.3 or a later patch in the 26.11 series. It also supports the Maho 27.1 development branch.
 
-From a Maho Composer project with this checkout next to it, register the local package and install it.
+From your Maho Composer project, register the GitHub repository and install the preview.
 
 ```bash
-composer config repositories.email-text-alternative path ../email-text-alternative-module
+composer config repositories.email-text-alternative vcs https://github.com/ugoparsi/module-email-text-alternative
 composer require ugoparsi/module-email-text-alternative:dev-main
 ./maho cache:flush
 ```
