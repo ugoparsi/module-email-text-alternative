@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+SPDX-FileCopyrightText: 2026 Email Text Alternative contributors
+SPDX-License-Identifier: AFL-3.0
+-->
+<config>
+    <sections>
+        <system>
+            <groups>
+                <smtp>
+                    <fields>
+                        <text_alternative translate="label comment">
+                            <label>Add Plain-Text Alternative</label>
+                            <comment>Include a plain-text version in HTML emails.</comment>
+                            <frontend_type>boolean</frontend_type>
+                            <sort_order>96</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </text_alternative>
+                    </fields>
+                </smtp>
+            </groups>
+        </system>
+    </sections>
+</config>

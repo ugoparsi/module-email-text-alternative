@@ -1,0 +1,11 @@
+{
+    "name": "ugoparsi/module-email-text-alternative",
+    "description": "Add a plain-text alternative to rendered Maho email templates.",
+    "type": "maho-module",
+    "license": "OSL-3.0 AND AFL-3.0",
+    "require": {
+        "php": ">=8.5.1",
+        "mahocommerce/maho": "~26.11.3 || ~27.1.0",
+        "league/html-to-markdown": "^5.1"
+    }
+}

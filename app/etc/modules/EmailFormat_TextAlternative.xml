@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+SPDX-FileCopyrightText: 2026 Email Text Alternative contributors
+SPDX-License-Identifier: AFL-3.0
+-->
+<config>
+    <modules>
+        <EmailFormat_TextAlternative>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Core/>
+                <Mage_Adminhtml/>
+            </depends>
+        </EmailFormat_TextAlternative>
+    </modules>
+</config>

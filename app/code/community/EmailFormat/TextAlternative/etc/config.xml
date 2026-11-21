@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+SPDX-FileCopyrightText: 2026 Email Text Alternative contributors
+SPDX-License-Identifier: AFL-3.0
+-->
+<config>
+    <modules>
+        <EmailFormat_TextAlternative>
+            <version>1.0.0</version>
+        </EmailFormat_TextAlternative>
+    </modules>
+    <default>
+        <system>
+            <smtp>
+                <text_alternative>0</text_alternative>
+            </smtp>
+        </system>
+    </default>
+</config>
